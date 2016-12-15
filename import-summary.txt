@@ -1,0 +1,68 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+* LUiSoc\
+* LUiSoc\.git\
+* LUiSoc\.git\HEAD
+* LUiSoc\.git\config
+* LUiSoc\.git\description
+* LUiSoc\.git\hooks\
+* LUiSoc\.git\hooks\README.sample
+* LUiSoc\.git\info\
+* LUiSoc\.git\info\exclude
+* LUiSoc\.git\objects\
+* LUiSoc\.git\objects\41\
+* LUiSoc\.git\objects\41\2eeda78dc9de1186c2e0e1526764af82ab3431
+* LUiSoc\.git\objects\b9\
+* LUiSoc\.git\objects\b9\d6bd92f5f09e195d6bc19536500b6494dd2b75
+* LUiSoc\.git\objects\d7\
+* LUiSoc\.git\objects\d7\cf032c3972bc32ef48176a9b7d313b7fcc5e9b
+* LUiSoc\.git\objects\fc\
+* LUiSoc\.git\objects\fc\c6b6f544361ad17599f13ded1349bdc30ae121
+* LUiSoc\.gitattributes
+* LUiSoc\.gitignore
+* ic_launcher-web.png
+* proguard-project.txt
+
+Replaced Jars with Dependencies:
+--------------------------------
+The importer recognized the following .jar files as third party
+libraries and replaced them with Gradle dependencies instead. This has
+the advantage that more explicit version information is known, and the
+libraries can be updated automatically. However, it is possible that
+the .jar file in your project was of an older version than the
+dependency we picked, which could render the project not compileable.
+You can disable the jar replacement in the import wizard and try again:
+
+android-support-v4.jar => com.android.support:support-v4:18.0.0
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+* AndroidManifest.xml => app\src\main\AndroidManifest.xml
+* assets\ => app\src\main\assets\
+* res\ => app\src\main\res\
+* src\ => app\src\main\java\
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)
