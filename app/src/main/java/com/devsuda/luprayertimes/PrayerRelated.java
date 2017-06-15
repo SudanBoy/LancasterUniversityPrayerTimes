@@ -1,10 +1,10 @@
 package com.devsuda.luprayertimes;
 
+import android.database.Cursor;
+
 import java.text.ParseException;
 import java.util.Calendar;
 import java.util.Date;
-
-import android.database.Cursor;
 
 public class PrayerRelated {
 
@@ -42,7 +42,7 @@ public class PrayerRelated {
 		}
 
 		try {
-			prayerIgamaTimeFormated = Check_Date.dateformat_1().parse(
+			prayerIgamaTimeFormated = DateTimeAdaptor.dateformat_1().parse(
 					prayerIgamaTimeAsString);
 		} catch (ParseException e1) {
 			e1.printStackTrace();

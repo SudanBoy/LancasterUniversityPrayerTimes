@@ -13,7 +13,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class Db_Manager_Uni extends SQLiteOpenHelper {
+public class DatabaseAdaptor extends SQLiteOpenHelper {
 
 	private static final String DATABASE_NAME = "uniDB_5";
 	private static final int DATABASE_VERSION = 1;
@@ -45,7 +45,7 @@ public class Db_Manager_Uni extends SQLiteOpenHelper {
 	private static String DATABASE_PATH;
 
 	/** constructor */
-	public Db_Manager_Uni(Context ctx) {
+	public DatabaseAdaptor(Context ctx) {
 		super(ctx, DATABASE_NAME, null, DATABASE_VERSION);
 		this.context = ctx;
 		DATABASE_PATH = context.getFilesDir().getParentFile().getPath()

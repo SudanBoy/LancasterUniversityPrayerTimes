@@ -3,8 +3,6 @@ package com.devsuda.luprayertimes;
 import java.io.IOException;
 import java.util.Calendar;
 
-import com.devsuda.luprayertimes.R;
-
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
@@ -13,17 +11,15 @@ import android.view.View;
 import android.widget.Toast;
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.SQLException;
 
-public class UniMasjid extends Activity {
+public class MainActivity extends Activity {
 
-	Gui_Manager_Uni time_date = new Gui_Manager_Uni(this);
+	DispalyCountdowns time_date = new DispalyCountdowns(this);
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +28,7 @@ public class UniMasjid extends Activity {
 
 		// ------------------
 
-		Db_Manager_Uni dba_prayertimes_uni = new Db_Manager_Uni(this);
+		DatabaseAdaptor dba_prayertimes_uni = new DatabaseAdaptor(this);
 		try {
 			dba_prayertimes_uni.create();
 		} catch (IOException ioe) {
@@ -185,7 +181,7 @@ public class UniMasjid extends Activity {
 		setContentView(R.layout.activity_university_masjid);
 
 		// ======================================
-		Db_Manager_Uni dba_prayertimes_uni = new Db_Manager_Uni(this);
+		DatabaseAdaptor dba_prayertimes_uni = new DatabaseAdaptor(this);
 		try {
 			dba_prayertimes_uni.create();
 		} catch (IOException ioe) {

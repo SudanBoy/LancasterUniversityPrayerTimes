@@ -1,26 +1,23 @@
 package com.devsuda.luprayertimes;
 
-import java.text.ParseException;
-import java.util.Calendar;
-import java.util.Date;
-
 import android.content.Context;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.media.MediaPlayer;
-import android.media.Ringtone;
-import android.media.RingtoneManager;
-import android.net.Uri;
 import android.os.CountDownTimer;
 import android.os.Vibrator;
 import android.widget.TableLayout;
 import android.widget.TextView;
 
-public class Gui_Manager_Uni {
+import java.text.ParseException;
+import java.util.Calendar;
+import java.util.Date;
 
-	public UniMasjid set_uni_prayers_times;
+public class DispalyCountdowns {
 
-	public Gui_Manager_Uni(UniMasjid universitymasjid) {
+	public MainActivity set_uni_prayers_times;
+
+	public DispalyCountdowns(MainActivity universitymasjid) {
 		this.set_uni_prayers_times = universitymasjid;
 	}
 
@@ -215,7 +212,7 @@ public class Gui_Manager_Uni {
 
 	}
 
-	public void get_time_diff(Cursor c, Db_Manager_Uni db_2) {
+	public void get_time_diff(Cursor c, DatabaseAdaptor db_2) {
 
 		long fajr_in_ms;
 		long zhor_in_ms;
@@ -334,7 +331,7 @@ public class Gui_Manager_Uni {
 			break;
 		}
 
-		gregorianTime.setText(Check_Date.dateformat_3().format(new Date()));
+		gregorianTime.setText(DateTimeAdaptor.dateformat_3().format(new Date()));
 
 		fajrAzan.setText(c.getString(4));
 		fajrIgama.setText(c.getString(5));
@@ -394,7 +391,7 @@ public class Gui_Manager_Uni {
 			// initialize the calendar with current day
 			try {
 				calendar_1
-						.setTime(Check_Date.dateformat_2().parse(currentDate));
+						.setTime(DateTimeAdaptor.dateformat_2().parse(currentDate));
 			} catch (ParseException e) {
 				e.printStackTrace();
 			}
@@ -403,11 +400,11 @@ public class Gui_Manager_Uni {
 			calendar_1.add(Calendar.DATE, 1);
 
 			// Returns the time of this Calendar as a Date object.
-			nextDay = Check_Date.dateformat_2().format(calendar_1.getTime());
+			nextDay = DateTimeAdaptor.dateformat_2().format(calendar_1.getTime());
 
 			// parse nextDay with format_2 to get the right "date" syntax
 			try {
-				tomorrow_date = Check_Date.dateformat_2().parse(nextDay);
+				tomorrow_date = DateTimeAdaptor.dateformat_2().parse(nextDay);
 			} catch (ParseException e) {
 				e.printStackTrace();
 			}
@@ -430,7 +427,7 @@ public class Gui_Manager_Uni {
 			fajrBG.setBackgroundColor(Color.parseColor("#f1c40f"));
 		} else if (current_time.before(zhor_time)
 				&& current_time.after(fajr_time)) {
-			if (Check_Date.ifItIsFriday() == true) {
+			if (DateTimeAdaptor.ifItIsFriday() == true) {
 				zhorBG.setBackgroundColor(Color.parseColor("#f1c40f"));
 				nextPrayerTimeInMs = zhor_in_ms;
 			} else {
@@ -454,7 +451,7 @@ public class Gui_Manager_Uni {
 			// initialize the calendar with current day
 			try {
 				calendar_1
-						.setTime(Check_Date.dateformat_2().parse(currentDate));
+						.setTime(DateTimeAdaptor.dateformat_2().parse(currentDate));
 			} catch (ParseException e) {
 				e.printStackTrace();
 			}
@@ -463,11 +460,11 @@ public class Gui_Manager_Uni {
 			calendar_1.add(Calendar.DATE, 1);
 
 			// Returns the time of this Calendar as a Date object.
-			nextDay = Check_Date.dateformat_2().format(calendar_1.getTime());
+			nextDay = DateTimeAdaptor.dateformat_2().format(calendar_1.getTime());
 
 			// parse nextDay with format_2 to get the right "date" syntax
 			try {
-				tomorrow_date = Check_Date.dateformat_2().parse(nextDay);
+				tomorrow_date = DateTimeAdaptor.dateformat_2().parse(nextDay);
 			} catch (ParseException e) {
 				e.printStackTrace();
 			}

@@ -4,7 +4,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class Check_Date {
+public class DateTimeAdaptor {
 
 	public static boolean ifItIsFriday() {
 		Calendar cal = Calendar.getInstance();
