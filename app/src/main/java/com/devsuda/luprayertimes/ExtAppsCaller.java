@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.widget.Toast;
 
@@ -50,15 +51,17 @@ public class ExtAppsCaller {
                     currentLocLat = locationAdaptor.getLatitude();
                     currentLocLon = locationAdaptor.getLongitude();
 
-                    String uri = String.format(Locale.ENGLISH,
-                            "http://maps.google.com/maps?saddr=%f,%f(%s)&daddr=%f,%f (%s)",
-                            prayerRoomLat, prayerRoomLon, "My current location",
-                            currentLocLat, currentLocLon, "Prayer Room");
-                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+                    if (isLocationEnabled()) {
+                        String uri = String.format(Locale.ENGLISH,
+                                "http://maps.google.com/maps?saddr=%f,%f(%s)&daddr=%f,%f (%s)",
+                                currentLocLat, currentLocLon, "My current location",
+                                prayerRoomLat, prayerRoomLon, "Prayer Room");
+                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
 
-                    intent.setPackage("com.google.android.apps.maps");
+                        intent.setPackage("com.google.android.apps.maps");
 
-                    context.startActivity(intent);
+                        context.startActivity(intent);
+                    }
                 } else {
                     actionToInstallApp(appId);
                 }
@@ -80,7 +83,6 @@ public class ExtAppsCaller {
                 break;
         }
     }
-
 
 
     public boolean isAppInstalled(String uri) {
@@ -150,5 +152,25 @@ public class ExtAppsCaller {
                 break;
         }
 
+    }
+
+    private boolean isLocationEnabled() {
+        boolean locationEnabled = false;
+        LocationManager locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
+        if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(context);
+            builder.setTitle("GPS Not Found");  // GPS not found
+            builder.setMessage("Want to ernable"); // Want to enable?
+            builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    context.startActivity(new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+                }
+            });
+            builder.setNegativeButton("No", null);
+            builder.create().show();
+        } else {
+            locationEnabled = true;
+        }
+        return locationEnabled;
     }
 }

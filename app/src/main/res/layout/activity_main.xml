@@ -663,7 +663,7 @@
             android:gravity="center|top"
             android:text="Kindly, make duaa for my parents please"
             android:textColor="#ffffff"
-            android:textSize="10sp"
+            android:textSize="12sp"
             android:typeface="serif"></TextView>
     </TableRow>
 
