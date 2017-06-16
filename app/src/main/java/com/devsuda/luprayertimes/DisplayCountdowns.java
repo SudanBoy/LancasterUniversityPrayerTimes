@@ -60,19 +60,16 @@ public class DisplayCountdowns {
                         } else {
                             minOfAzanCdTv.setText(minOfAzanCd);
                             minOfAzanCdSign.setText(" minutes to Azan\t");
-                            //azanCdBg.setBackgroundColor(Color.parseColor("#dcf2e0a5"));
                         }
 
                     } else {
-                        minOfAzanCdSign.setText("Relax, azan not yet called");
-                        //azanCdBg.setBackgroundColor(Color.parseColor("#bdd3e282"));
+                        minOfAzanCdSign.setText("Azan not yet called");
                     }
                 }
 
                 public void onFinish() {
                     //notiAdaptor.showNotification(azanNotiId);
                     minOfAzanCdTv.setText("Azan has been called ");
-                    //azanCdBg.setBackgroundColor(Color.parseColor("#bdfac5b9"));
                 }
             }.start();
 
@@ -91,7 +88,6 @@ public class DisplayCountdowns {
                 public void onFinish() {
                     //notiAdaptor.showNotification(igamaNotiId);
                     minOfAzanCdTv.setText("Jamaa started, hurry up!");
-                    //azanCdBg.setBackgroundColor(Color.parseColor("#bdfac5b9"));
                 }
             }.start();
 
@@ -109,19 +105,16 @@ public class DisplayCountdowns {
                         } else {
                             minOfAzanCdTv.setText(minOfMagribCd);
                             minOfAzanCdSign.setText(" minutes to azan\t");
-                            //azanCdBg.setBackgroundColor(Color.parseColor("#dcf2e0a5"));
                         }
 
                     } else {
-                        minOfAzanCdSign.setText("Relax, azan not yet called");
-                        //azanCdBg.setBackgroundColor(Color.parseColor("#bdd3e282"));
+                        minOfAzanCdSign.setText("Azan not yet called");
                     }
                 }
 
                 public void onFinish() {
                     //notiAdaptor.showNotification(igamaNotiId);
                     minOfAzanCdTv.setText("Azan has been called ");
-                    //azanCdBg.setBackgroundColor(Color.parseColor("#bdfac5b9"));
                 }
             }.start();
         }

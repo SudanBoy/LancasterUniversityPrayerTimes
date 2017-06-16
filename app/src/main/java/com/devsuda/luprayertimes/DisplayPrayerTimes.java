@@ -126,7 +126,7 @@ public class DisplayPrayerTimes {
 
         displayMsgToUsrTv = (TextView) mainActivity.findViewById(R.id.displayMsgToUsrTv);
 
-        this.dateNameTV = (TextView) mainActivity.findViewById(R.id.dateNameTV);
+        this.dateNameTV = (TextView) mainActivity.findViewById(R.id.dayNameTV);
         this.gregorianTimeTV = (TextView) mainActivity.findViewById(R.id.gregorianTimeTV);
 
         this.shehriLblTV = (TextView) mainActivity.findViewById(R.id.shehriLblTV);

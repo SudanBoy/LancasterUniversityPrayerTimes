@@ -17,78 +17,72 @@
         android:layout_height="wrap_content"
         android:gravity="center">
 
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center|center_horizontal"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <TextView
+                    android:id="@+id/dayNameTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="Day"
+                    android:textColor="#ecf0f1"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="-"
+                    android:textColor="#ecf0f1"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/gregorianTimeTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="Date"
+                    android:textColor="#ecf0f1"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+        </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:gravity="center_horizontal">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Lancaster Islamic Society"
+                android:text="Lancaster University"
                 android:textColor="#ecf0f1"
                 android:textSize="20sp"
-                android:typeface="serif" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:weightSum="1">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:orientation="horizontal"
-                android:weightSum="6">
-
-                <TextView
-                    android:id="@+id/dateNameTV"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:layout_weight="0.80"
-                    android:text="Date"
-                    android:textColor="#ecf0f1"
-                    android:textSize="18sp"
-                    android:typeface="serif" />
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.20"
-                    android:text=" - "
-                    android:textColor="#ecf0f1"
-                    android:textSize="18sp"
-                    android:typeface="serif" />
-
-                <TextView
-                    android:id="@+id/gregorianTimeTV"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1.20"
-                    android:text="Gregorain"
-                    android:textColor="#ecf0f1"
-                    android:textSize="18sp"
-                    android:typeface="serif" />
-            </LinearLayout>
-
+                android:textStyle="bold" />
         </TableRow>
 
     </TableLayout>
 
     <TextView
         android:layout_width="fill_parent"
-        android:layout_height="10sp"></TextView>
-
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="10sp"></TextView>
+        android:layout_height="20sp"></TextView>
 
     <TableLayout
         android:layout_width="fill_parent"
@@ -97,24 +91,6 @@
         android:background="@drawable/roundcorners2"
         android:gravity="center"
         android:weightSum="3">
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center">
-
-            <Button
-                style="@style/button_text"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:background="@drawable/red_button"
-                android:onClick="gotoMasjidLocation"
-                android:text="Lancaster University Prayer Room Location"
-                android:textSize="16sp" />
-
-        </TableRow>
 
 
         <TableRow
@@ -137,8 +113,7 @@
                     android:gravity="center"
                     android:textColor="#e74c3c"
                     android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:typeface="serif" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/minOfAzanCdSign"
@@ -146,8 +121,7 @@
                     android:layout_height="fill_parent"
                     android:gravity="top"
                     android:textColor="#2c3e50"
-                    android:textSize="16sp"
-                    android:typeface="serif" />
+                    android:textSize="16sp" />
 
             </LinearLayout>
         </TableRow>
@@ -171,8 +145,7 @@
                     android:gravity="center"
                     android:text="Time until Igama"
                     android:textColor="#2c3e50"
-                    android:textSize="10sp"
-                    android:typeface="serif" />
+                    android:textSize="10sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -186,8 +159,7 @@
                         android:gravity="center"
                         android:textColor="#e74c3c"
                         android:textSize="30sp"
-                        android:textStyle="bold"
-                        android:typeface="serif" />
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/hourOfIgamaCdSign"
@@ -195,8 +167,7 @@
                         android:layout_height="fill_parent"
                         android:text=":"
                         android:textColor="#e74c3c"
-                        android:textSize="30sp"
-                        android:typeface="serif" />
+                        android:textSize="30sp" />
 
                     <TextView
                         android:id="@+id/minOfIgamaCdTv"
@@ -205,8 +176,7 @@
                         android:gravity="center"
                         android:textColor="#e74c3c"
                         android:textSize="30sp"
-                        android:textStyle="bold"
-                        android:typeface="serif" />
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/minOfIgamaCdSign"
@@ -214,8 +184,7 @@
                         android:layout_height="fill_parent"
                         android:text=":"
                         android:textColor="#e74c3c"
-                        android:textSize="30sp"
-                        android:typeface="serif" />
+                        android:textSize="30sp" />
 
                     <TextView
                         android:id="@+id/secOfIgamaCdTv"
@@ -224,38 +193,17 @@
                         android:gravity="center"
                         android:textColor="#e74c3c"
                         android:textSize="30sp"
-                        android:textStyle="bold"
-                        android:typeface="serif" />
+                        android:textStyle="bold" />
 
                 </LinearLayout>
             </LinearLayout>
         </TableRow>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center">
-
-            <Button
-                style="@style/button_text"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:background="@drawable/red_button"
-                android:onClick="gotoIsocFacebookPage"
-                android:text="iSoc Facebook page"
-                android:textSize="16sp" />
-
-        </TableRow>
-
-
     </TableLayout>
 
     <TextView
         android:layout_width="fill_parent"
-        android:layout_height="5sp"
-        android:background="#2c3e50"></TextView>
+        android:layout_height="5sp"></TextView>
 
     <TableLayout
         android:layout_width="fill_parent"
@@ -263,23 +211,22 @@
         android:layout_weight="3"
         android:background="@drawable/roundcorners3"
         android:gravity="center"
-        android:weightSum="6">
+        android:weightSum="9">
 
         <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/displayMsgToUsrTv"
-                android:gravity="center|top"
+                android:gravity="center"
                 android:text="Prayer times may change at short notice"
                 android:textColor="#2c3e50"
                 android:textSize="12sp"
-                android:textStyle="bold"
-                android:typeface="serif"></TextView>
+                android:textStyle="bold"></TextView>
 
         </TableRow>
 
@@ -300,8 +247,7 @@
                     android:gravity="left"
                     android:text="    Prayer"
                     android:textColor="#2c3e50"
-                    android:textSize="12sp"
-                    android:typeface="serif" />
+                    android:textSize="12sp" />
 
                 <TextView
                     android:layout_width="0sp"
@@ -309,8 +255,7 @@
                     android:gravity="center"
                     android:text="Azan"
                     android:textColor="#2c3e50"
-                    android:textSize="12sp"
-                    android:typeface="serif" />
+                    android:textSize="12sp" />
 
                 <TextView
                     android:layout_width="0sp"
@@ -318,8 +263,7 @@
                     android:gravity="center"
                     android:text="Igama"
                     android:textColor="#2c3e50"
-                    android:textSize="12sp"
-                    android:typeface="serif" />
+                    android:textSize="12sp" />
             </TableRow>
         </TableLayout>
 
@@ -346,8 +290,7 @@
                     android:gravity="left"
                     android:text="  Fajr"
                     android:textColor="#2c3e50"
-                    android:textSize="20sp"
-                    android:typeface="serif" />
+                    android:textSize="18sp" />
 
                 <TableLayout
                     android:layout_width="0dp"
@@ -372,7 +315,7 @@
                             android:includeFontPadding="false"
                             android:text=" SH"
                             android:textColor="#2c3e50"
-                            android:textSize="10dp" />
+                            android:textSize="9dp" />
                     </TableRow>
                 </TableLayout>
 
@@ -399,8 +342,7 @@
                             android:id="@+id/fajrIgamaTV"
                             android:gravity="center"
                             android:textColor="#2c3e50"
-                            android:textSize="18sp"
-                            android:typeface="serif" />
+                            android:textSize="18sp" />
                     </TableRow>
 
                     <TableRow
@@ -420,7 +362,7 @@
                             android:includeFontPadding="false"
                             android:text=" SR"
                             android:textColor="#2c3e50"
-                            android:textSize="10sp" />
+                            android:textSize="9sp" />
                     </TableRow>
                 </TableLayout>
             </TableRow>
@@ -449,8 +391,7 @@
                     android:gravity="left"
                     android:text="  Zohr"
                     android:textColor="#2c3e50"
-                    android:textSize="18sp"
-                    android:typeface="serif" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/zhorAzanTV"
@@ -458,8 +399,7 @@
                     android:layout_weight="25"
                     android:gravity="center"
                     android:textColor="#2c3e50"
-                    android:textSize="18sp"
-                    android:typeface="serif" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/zhorIgamaTV"
@@ -467,8 +407,7 @@
                     android:layout_weight="25"
                     android:gravity="center"
                     android:textColor="#2c3e50"
-                    android:textSize="18sp"
-                    android:typeface="serif" />
+                    android:textSize="18sp" />
             </TableRow>
         </TableLayout>
 
@@ -495,8 +434,7 @@
                     android:gravity="left"
                     android:text="  Asr"
                     android:textColor="#2c3e50"
-                    android:textSize="18sp"
-                    android:typeface="serif" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/asorAzanHanafiTV"
@@ -504,8 +442,7 @@
                     android:layout_weight="25"
                     android:gravity="center"
                     android:textColor="#2c3e50"
-                    android:textSize="18sp"
-                    android:typeface="serif" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/asorIgamaTV"
@@ -513,8 +450,7 @@
                     android:layout_weight="25"
                     android:gravity="center"
                     android:textColor="#2c3e50"
-                    android:textSize="18sp"
-                    android:typeface="serif" />
+                    android:textSize="18sp" />
             </TableRow>
         </TableLayout>
 
@@ -541,16 +477,14 @@
                     android:gravity="left"
                     android:text="  Maghrib"
                     android:textColor="#2c3e50"
-                    android:textSize="18sp"
-                    android:typeface="serif" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:layout_width="0sp"
                     android:layout_weight="25"
                     android:gravity="center"
                     android:textColor="#2c3e50"
-                    android:textSize="18sp"
-                    android:typeface="serif" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/magribIgamaTV"
@@ -558,8 +492,7 @@
                     android:layout_weight="25"
                     android:gravity="center"
                     android:textColor="#2c3e50"
-                    android:textSize="18sp"
-                    android:typeface="serif" />
+                    android:textSize="18sp" />
             </TableRow>
         </TableLayout>
 
@@ -586,8 +519,7 @@
                     android:gravity="left"
                     android:text="  Isha"
                     android:textColor="#2c3e50"
-                    android:textSize="20sp"
-                    android:typeface="serif" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/ishaAzanTV"
@@ -595,8 +527,7 @@
                     android:layout_weight="25"
                     android:gravity="center"
                     android:textColor="#2c3e50"
-                    android:textSize="18sp"
-                    android:typeface="serif" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/ishaIgamaTV"
@@ -604,8 +535,7 @@
                     android:layout_weight="25"
                     android:gravity="center"
                     android:textColor="#2c3e50"
-                    android:textSize="18sp"
-                    android:typeface="serif" />
+                    android:textSize="18sp" />
             </TableRow>
         </TableLayout>
 
@@ -623,50 +553,73 @@
 
             <TextView
                 android:gravity="center"
-                android:text="*SH = Shehri       *SR = Sunrise"
+                android:text="Please, make Duaa for my Parents"
                 android:textColor="#2c3e50"
-                android:textSize="9sp"
-                android:typeface="serif"></TextView>
+                android:textSize="12sp"
+                android:textStyle="bold"></TextView>
 
         </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center">
-
-            <Button
-                style="@style/button_text"
-                android:layout_width="fill_parent"
-                android:layout_height="35dp"
-                android:layout_margin="10dp"
-                android:background="@drawable/red_button"
-                android:onClick="gotoLancasterMasjidApp"
-                android:text="See prayers times at Masjid-E-nour in Lancaster City"
-                android:textSize="13sp" />
-
-        </TableRow>
-
 
     </TableLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="10sp"></TextView>
 
     <TableRow
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:layout_weight="1"
         android:gravity="center"
         android:orientation="horizontal">
 
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="3">
 
-        <TextView
-            android:gravity="center|top"
-            android:text="Kindly, make duaa for my parents please"
-            android:textColor="#ffffff"
-            android:textSize="12sp"
-            android:typeface="serif"></TextView>
+            <Button
+                style="@style/button_text"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/red_button"
+                android:onClick="gotoMasjidLocation"
+                android:text="Prayer Room Location"
+                android:textSize="13sp" />
+
+            <Button
+                style="@style/button_text"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/red_button"
+                android:onClick="gotoIsocFacebookPage"
+                android:text="iSoc on Facebook"
+                android:textSize="13sp" />
+
+            <Button
+                style="@style/button_text"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/red_button"
+                android:onClick="gotoLancasterMasjidApp"
+                android:text="Masjid-E-nour (Lancaster)"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
     </TableRow>
 
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="15sp"></TextView>
 
 </TableLayout>
 

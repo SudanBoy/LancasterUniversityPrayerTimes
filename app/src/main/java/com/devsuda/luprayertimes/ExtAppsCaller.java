@@ -42,28 +42,56 @@ public class ExtAppsCaller {
                             .getLaunchIntentForPackage("com.devsuda.lancasterprayertimes");
                     context.startActivity(LaunchIntent);
                 } else {
-                    actionToInstallApp(appId);
+                    alertDialog.setMessage("\nLancaster Prayer-Times App isn't installed...\nDo you want to install it now?");
+
+                    alertDialog.setPositiveButton("Yes",
+                            new DialogInterface.OnClickListener() {
+
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    try {
+                                        context.startActivity(new Intent(Intent.ACTION_VIEW, Uri
+                                                .parse("market://details?id="
+                                                        + "com.devsuda.luprayertimes")));
+                                    } catch (android.content.ActivityNotFoundException anfe) {
+                                        context.startActivity(new Intent(
+                                                Intent.ACTION_VIEW,
+                                                Uri.parse("http://play.google.com/store/apps/details?id"
+                                                        + "com.devsuda.luprayertimes")));
+                                    }
+                                }
+                            });
+
+                    alertDialog.setNegativeButton("No",
+                            new DialogInterface.OnClickListener() {
+
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                }
+                            });
+
+                    alertDialog.show();
                 }
                 break;
 
             case 2:
                 if (isAppInstalled(GOOGLE_MAP_APP_URI)) {
-                    currentLocLat = locationAdaptor.getLatitude();
-                    currentLocLon = locationAdaptor.getLongitude();
 
-                    if (isLocationEnabled()) {
-                        String uri = String.format(Locale.ENGLISH,
-                                "http://maps.google.com/maps?saddr=%f,%f(%s)&daddr=%f,%f (%s)",
-                                currentLocLat, currentLocLon, "My current location",
-                                prayerRoomLat, prayerRoomLon, "Prayer Room");
-                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+                    String uri = String.format(Locale.ENGLISH, "geo:%f,%f", prayerRoomLat, prayerRoomLon);
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+                    context.startActivity(intent);
 
-                        intent.setPackage("com.google.android.apps.maps");
+                    intent.setPackage("com.google.android.apps.maps");
 
-                        context.startActivity(intent);
-                    }
+                    context.startActivity(intent);
+
                 } else {
-                    actionToInstallApp(appId);
+                    String uri = "https://www.google.co.uk/maps/place/54%C2%B000'41.9%22N+2%C2%B047'11.4%22W/@54.0116389,-2.787241,18z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d54.0116389!4d-2.7865";
+
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+                    context.startActivity(intent);
+
+                    alertDialog.show();
                 }
                 break;
 
@@ -78,7 +106,11 @@ public class ExtAppsCaller {
                         context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("fb://page/121498887937290")));
                     }
                 } else {
-                    actionToInstallApp(appId);
+                    Toast.makeText(context, "Openning Facebook on a browser", Toast.LENGTH_SHORT).show();
+                    String url = "https://www.facebook.com/LancsIsoc";
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse(url));
+                    context.startActivity(i);
                 }
                 break;
         }
@@ -94,64 +126,6 @@ public class ExtAppsCaller {
             appInstalled = false;
         }
         return appInstalled;
-    }
-
-    public void actionToInstallApp(int appId) {
-        alertDialog = new AlertDialog.Builder(context);
-
-        switch (appId) {
-            case 1:
-                alertDialog.setMessage("\nLancaster Prayer-Times App isn't installed...\nDo you want to install it now?");
-
-                alertDialog.setPositiveButton("Yes",
-                        new DialogInterface.OnClickListener() {
-
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                try {
-                                    context.startActivity(new Intent(Intent.ACTION_VIEW, Uri
-                                            .parse("market://details?id="
-                                                    + "com.devsuda.luprayertimes")));
-                                } catch (android.content.ActivityNotFoundException anfe) {
-                                    context.startActivity(new Intent(
-                                            Intent.ACTION_VIEW,
-                                            Uri.parse("http://play.google.com/store/apps/details?id"
-                                                    + "com.devsuda.luprayertimes")));
-                                }
-                            }
-                        });
-
-                alertDialog.setNegativeButton("No",
-                        new DialogInterface.OnClickListener() {
-
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                            }
-                        });
-
-                alertDialog.show();
-                break;
-
-            case 2:
-
-                String uri = "https://www.google.co.uk/maps/place/54%C2%B000'41.9%22N+2%C2%B047'11.4%22W/@54.0116389,-2.787241,18z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d54.0116389!4d-2.7865";
-
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
-                context.startActivity(intent);
-
-                alertDialog.show();
-
-                break;
-
-            case 3:
-                Toast.makeText(context, "Openning Facebook on a browser", Toast.LENGTH_SHORT).show();
-                String url = "https://www.facebook.com/LancsIsoc";
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(url));
-                context.startActivity(i);
-                break;
-        }
-
     }
 
     private boolean isLocationEnabled() {
